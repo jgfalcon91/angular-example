@@ -1,0 +1,37 @@
+<h1 class="text-center">Personas</h1>
+<table class="table table-striped">
+    <thead>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Email</th>
+      <th>Dirección</th>
+    </thead>
+    <tbody>
+      <tr *ngFor='let persona of personas'>
+        <td>{{persona.nombre}}</td>
+        <td>{{persona.apellido}}</td>
+        <td>{{persona.email}}</td>
+        <td>{{persona.direccion}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <form #registrarPersona="ngForm" (ngSubmit)="registrar(registrarPersona.value)">
+    <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" class="form-control" name="nombre" id="nombre" ngModel>
+    </div>
+    <div class="form-group">
+        <label for="apellido">Apellido</label>
+        <input type="text" class="form-control" name="apellido" id="apellido" ngModel>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" class="form-control" name="email" id="email" ngModel>
+    </div>
+    <div class="form-group">
+      <label for="direccion">Direccion</label>
+      <input type="text" class="form-control" name="direccion" id="direccion" ngModel>
+    </div>
+    <br>
+    <input type="submit" class="btn btn-primary" value="Guardar">
+  </form>
